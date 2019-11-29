@@ -1,1 +1,26 @@
-index.erb
+<%# index.erb %>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>..::Owners::..</title>
+    </head>
+    <body>
+        <ul>
+            <li><a href="/">HOME</a></li>
+            <li><a href="/owners">OWNERS</a></li>
+            <li><a href="/pets">PETS</a></li>
+        </ul>
+        <h1>Pets</h1>
+
+        <a href="/owners/new">Create Owner</a>
+
+        <h1>Owners list</h1>
+        <% @owners.each do |owner| %>
+          <ul>
+            <li><a href="/owners/<%= owner.id %>"><%= owner.name%></a></li>
+          </ul>
+        <% end %>
+
+    </body>
+</html>
